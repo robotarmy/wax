@@ -1,5 +1,8 @@
 waxClass{"BlueController", UIViewController}
 
+IBOutlet 'button'
+IBOutlet 'textField'
+
 function init(self)
   self.super:initWithNibName_bundle("BlueView", nil)
   
@@ -10,10 +13,8 @@ function viewDidLoad(self)
   -- All IB views are accessed through tags. You set a view's tag with the 
   -- inspector window in IB
   
-  self.button = self:view():viewWithTag(1)
   self.button:addTarget_action_forControlEvents(self, "buttonTouched:", UIControlEventTouchUpInside) 
 
-  self.textField = self:view():viewWithTag(2)  
   self.textField:setText("This was created in Lua!")
 end
 
