@@ -76,24 +76,24 @@ void wax_startWithExtensions(lua_CFunction func, ...) {
     }
 	
     // Load all the wax lua scripts
-    if (luaL_dofile(L, WAX_DATA_DIR "/scripts/wax/init.lua") != 0) {
+    if (luaL_dofile(L, WAX_ROOT_DIR "/wax/init.lua") != 0) {
         fprintf(stderr,"Fatal error opening wax scripts: %s\n", lua_tostring(L,-1));
     }
 	
     // Start the user's init script!
-    if (luaL_dofile(L, WAX_DATA_DIR "/scripts/" WAX_LUA_INIT_SCRIPT ".lua") != 0) {
+    if (luaL_dofile(L, WAX_ROOT_DIR "/" WAX_LUA_INIT_SCRIPT ".lua") != 0) {
         fprintf(stderr,"Fatal error: %s\n", lua_tostring(L,-1));
     }
 	
     NSDictionary *env = [[NSProcessInfo processInfo] environment];
     if ([[env objectForKey:@"WAX_TEST"] isEqual:@"YES"]) { // Should we run the tests?
-        if (luaL_dofile(L, WAX_DATA_DIR "/scripts/tests/init.lua") != 0) {
+        if (luaL_dofile(L, WAX_ROOT_DIR "/tests/init.lua") != 0) {
             fprintf(stderr,"Fatal error running tests: %s\n", lua_tostring(L,-1));
         }
         exit(1);
     }
 	else if ([[env objectForKey:@"WAX_REPL"] isEqual:@"YES"]) { // Should we run the repl?
-        if (luaL_dofile(L, WAX_DATA_DIR "/scripts/wax/repl.lua") != 0) {
+        if (luaL_dofile(L, WAX_ROOT_DIR "/wax/repl.lua") != 0) {
             fprintf(stderr,"Fatal error starting the REPL: %s\n", lua_tostring(L,-1));
         }		
 		exit(1);
@@ -110,7 +110,7 @@ void wax_startWithServer() {
 	lua_State *L = wax_currentLuaState();
 	
 	// Load all the wax lua scripts
-    if (luaL_dofile(L, WAX_DATA_DIR "/scripts/wax/init.lua") != 0) {
+    if (luaL_dofile(L, WAX_ROOT_DIR "/wax/init.lua") != 0) {
         fprintf(stderr,"Fatal error opening wax scripts: %s\n", lua_tostring(L,-1));
     }
 	
@@ -192,7 +192,7 @@ static int waxPrint(lua_State *L) {
 static int waxRoot(lua_State *L) {
     luaL_Buffer b;
     luaL_buffinit(L, &b);
-    luaL_addstring(&b, WAX_DATA_DIR);
+    luaL_addstring(&b, WAX_ROOT_DIR);
     
     for (int i = 1; i <= lua_gettop(L); i++) {
         luaL_addstring(&b, "/");

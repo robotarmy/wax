@@ -606,7 +606,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+					"WAX_ROOT_DIR=\"\\\"wax-root\\\"\"",
 					"WAX_LUA_INIT_SCRIPT='\"AppDelegate\"'",
 				);
 				HEADER_SEARCH_PATHS = "$(SDK_ROOT)/usr/include/libxml2";
@@ -624,7 +624,10 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "WAX_LUA_INIT_SCRIPT='\"AppDelegate\"'";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"WAX_ROOT_DIR=\"\\\"wax-root\\\"\"",
+					"WAX_LUA_INIT_SCRIPT='\"AppDelegate\"'",
+				);
 				HEADER_SEARCH_PATHS = "$(SDK_ROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Tests-Info.plist";
 				PRODUCT_NAME = Tests;
@@ -652,7 +655,10 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "WAX_LUA_INIT_SCRIPT='\"AppDelegate\"'";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"WAX_ROOT_DIR=\"\\\"wax-root\\\"\"",
+					"WAX_LUA_INIT_SCRIPT='\"AppDelegate\"'",
+				);
 				HEADER_SEARCH_PATHS = "$(SDK_ROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Tests-Info.plist";
 				PRODUCT_NAME = Tests;
@@ -679,7 +685,10 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = "WAX_LUA_INIT_SCRIPT='\"AppDelegate\"'";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"WAX_ROOT_DIR=\"\\\"wax-root\\\"\"",
+					"WAX_LUA_INIT_SCRIPT='\"AppDelegate\"'",
+				);
 				HEADER_SEARCH_PATHS = "$(SDK_ROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Tests-Info.plist";
 				PRODUCT_NAME = Tests;
